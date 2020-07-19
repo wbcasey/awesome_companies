@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User::ConfirmationsController < Devise::ConfirmationsController
+  skip_before_action :ensure_user_has_account_access, only: [:new, :create]
+
   # GET /resource/confirmation/new
   # def new
   #   super

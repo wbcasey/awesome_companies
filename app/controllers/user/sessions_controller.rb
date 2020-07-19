@@ -2,6 +2,7 @@
 
 class User::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  skip_before_action :ensure_user_has_account_access, only: [:new, :create]
 
   # GET /resource/sign_in
   # def new

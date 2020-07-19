@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User::UnlocksController < Devise::UnlocksController
+  skip_before_action :ensure_user_has_account_access, only: [:new, :create]
+
   # GET /resource/unlock/new
   # def new
   #   super

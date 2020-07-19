@@ -21,4 +21,5 @@ class ExampleReflex < ApplicationReflex
   #   end
   #
   # Learn more at: https://docs.stimulusreflex.com
+  delegate :current_user, to: :connection
 end
