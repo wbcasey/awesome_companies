@@ -38,6 +38,7 @@ gem "searchkick"
 gem "rollout"
 gem "rails_event_store"
 gem "dry-rails"
+gem "view_component"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -56,6 +57,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "guard"
+  gem "guard-rspec"
 end
 
 group :test do
