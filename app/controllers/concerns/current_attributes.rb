@@ -8,7 +8,8 @@ module CurrentAttributes
   def current_user
     @current_user ||= begin
       record = super
-      UserEntity.new(record)
+      return nil if record.nil?
+      UserEntity.new(record.attributes)
     end
   end
 

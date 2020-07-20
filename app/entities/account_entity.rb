@@ -1,3 +1,5 @@
 class AccountEntity < ApplicationEntity
-  safe_delegate :id, :name, :subdomain, to: :model
+  attribute :id, :integer
+  attribute :name, :string
+  attribute :subdomain, :string
 end

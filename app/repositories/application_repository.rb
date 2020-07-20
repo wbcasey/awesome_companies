@@ -17,14 +17,19 @@ class ApplicationRepository
 
   def find_by(*attributes)
     record = model_klass.find_by(*attributes)
-    entity_klass.new(record)
+    return nil if record.nil?
+
+    entity_klass.new(record.attributes)
   end
 
   def find(identifier)
     record = model_klass.find(identifier)
-    entity_klass.new(record)
+    entity_klass.new(record.attributes)
   end
 
+  def create(entity)
+    model_klass.create(entity.attributes)
+  end
 
   private
 

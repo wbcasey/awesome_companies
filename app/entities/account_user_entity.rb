@@ -1,3 +1,5 @@
 class AccountUserEntity < ApplicationEntity
-  safe_delegate :id, :account_id, :user_id, to: :model
+  attribute :id, :integer
+  attribute :account_id, :integer
+  attribute :user_id, :integer
 end
