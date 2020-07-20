@@ -6,7 +6,7 @@ module AccountAccess
   end
 
   def ensure_user_has_account_access
-    return if current_account_user.blank?
+    return if current_account_user.present?
     raise ActiveRecord::RecordNotFound
   end
 end
